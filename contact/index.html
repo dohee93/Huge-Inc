@@ -10,6 +10,8 @@
       <link rel="stylesheet" href="../css/contact.css">
       <link rel="stylesheet" href="../css/reset.css">
       <script src="../js/changeGreeting.js" defer></script>
+      <script src="../js/contact.js" defer></script>
+
    </head>
 <body>
    <header>
@@ -97,41 +99,160 @@
                   <hr class="subtitle-bar">
                   <h3>Let's talk.</h3>
                </div>
-               <div class="talk-container">
+               <form class="talk-container">
                   <h2 class="talk-headline">We want to get to know you.</h2>
-                  <div class="input-wrap">
-                     <input type="text" class="input" id="first_name" name="first_name">
-                     <label class="input-label" for="first_name">
-                        <span>Your name</span>
-                     </label>
-                  </div>
-                  <div class="input-wrap">
-                     <input type="text" class="input" id="email" name="email">
-                     <label class="input-label" for="email">
-                        <span>Your email</span>
-                     </label>
-                  </div>
-                  <div class="input-wrap">
-                     <input type="text" class="input" id="company" name="company">
-                     <label class="input-label" for="company">
-                        <span>Your company</span>
-                     </label>
-                  </div>
-                  <div class="input-wrap textarea-wrap                                           ">
-                     <textarea name="description" id="description" cols="30" rows="10"></textarea>
-                     <label class="input-label" for="description">
-                        <span>Let us know what you're looking for and how we can help.</span>
-                     </label>
-                  </div>
-                  <div class="input-wrap">
-                     <p>Please read our <a class="input-privacy" href="https://www.hugeinc.com/articles/your-privacy">Privacy Policy</a> to see how we use your personal information.<a></a></p>
-                  </div>
-                  <div class="send-wrap">
-                     <button class="submit-button">
-                        Send Message
-                     </button>
-                  </div>
-               </div>
+                  <ul id="talk-items">
+                     <div class="input-wrap">
+                        <h4 class="talk-eyebrow">Your name</h4>
+                        <input type="text" class="input" id="first_name" name="first_name" onfocus="talkInputFocus(0)" onblur="talkInputBlur(0)">
+                        <label class="input-label" for="first_name">
+                           <span>Your name</span>
+                        </label>
+                        <span class="input-field-message" aria-hidden="true">This is required</span>
+                     </div>
+                     <div class="input-wrap">
+                        <h4 class="talk-eyebrow">Your email</h4>
+                        <input type="text" class="input" id="email" name="email" onfocus="talkInputFocus(1)" onblur="talkInputBlur(1)">
+                        <label class="input-label" for="email">
+                           <span>Your email</span>
+                        </label>
+                        <span class="input-field-message" aria-hidden="true">This is not a valid email</span>
+                     </div>
+                     <div class="input-wrap">
+                        <h4 class="talk-eyebrow">Your company</h4>
+                        <input type="text" class="input" id="company" name="company" onfocus="talkInputFocus(2)" onblur="talkInputBlur(2)">
+                        <label class="input-label" for="company">
+                           <span>Your company</span>
+                        </label>
+                        <span class="input-field-message" aria-hidden="true">This is required</span>
+                     </div>
+                     <div class="input-wrap textarea-wrap                                           ">
+                        <h4 class="talk-eyebrow">Let us know what you're looking for and how we can help</h4>
+                        <textarea class="input" name="description" id="description" cols="30" rows="10"  onfocus="talkInputFocus(3)" onblur="talkInputBlur(3)"></textarea>
+                        <label class="input-label" for="description">
+                           <span>Let us know what you're looking for and how we can help.</span>
+                        </label>
+                        <span class="input-field-message" aria-hidden="true">This is required</span>
+                     </div>
+                     <div class="input-wrap">
+                        <p>Please read our <a class="input-privacy" href="https://www.hugeinc.com/articles/your-privacy">Privacy Policy</a> to see how we use your personal information.<a></a></p>
+                     </div>
+                     <div class="send-wrap">
+                        <button class="submit-button" type="button" onclick="talkSend()">
+                           Send Message
+                        </button>
+                     </div>
+                  </ul>
+               </form>
+            </div>
+         </section>
+         <!-- Office Section -->
+         <section id="office">
+            <div class="offices-container">
+               <a class="office-card" title="ATL." href="">
+                  <span class="office-nation">Atlanta.</span>
+                  <span class="office-hello">Ayee.</span>
+                  <span class="office-time">11:58 AM</span>
+                  <span class="office-phone">+1 404 461 9025</span>
+                  <span class="office-email">atl@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="BOG." href="">
+                  <span class="office-nation">Bogotá.</span>
+                  <span class="office-hello">Hola.</span>
+                  <span class="office-time">10:59 AM</span>
+                  <span class="office-phone">+571 3810606</span>
+                  <span class="office-email">bog@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="BKLN." href="">
+                  <span class="office-nation">Brooklyn.</span>
+                  <span class="office-hello">Yo.</span>
+                  <span class="office-time">11:59 AM</span>
+                  <span class="office-phone">+1 718 625 4843</span>
+                  <span class="office-email">bk@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="CHI." href="">
+                  <span class="office-nation">Chicago.</span>
+                  <span class="office-hello">Hey.</span>
+                  <span class="office-time">10:59 AM</span>
+                  <span class="office-phone">+1 312 637 3150</span>
+                  <span class="office-email">chi@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="DC." href="">
+                  <span class="office-nation">DC.</span>
+                  <span class="office-hello">Hi.</span>
+                  <span class="office-time">11:59 AM</span>
+                  <span class="office-phone">+1 202 350 4600</span>
+                  <span class="office-email">dc@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="DET." href="">
+                  <span class="office-nation">Detroit.</span>
+                  <span class="office-hello">Whad'up.</span>
+                  <span class="office-time">11:59 AM</span>
+                  <span class="office-phone">+1 248 731 0600</span>
+                  <span class="office-email">det@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="LDN." href="">
+                  <span class="office-nation">London.</span>
+                  <span class="office-hello">'Ello.</span>
+                  <span class="office-time">4:59 PM</span>
+                  <span class="office-phone">+ 44 (0)203 356 1900</span>
+                  <span class="office-email">ldn@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="LA." href="">
+                  <span class="office-nation">Los Angeles.</span>
+                  <span class="office-hello">E'yo.</span>
+                  <span class="office-time">8:59 AM</span>
+                  <span class="office-phone">+1 310 499 7700</span>
+                  <span class="office-email">la@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="MDE." href="">
+                  <span class="office-nation">Medellín.</span>
+                  <span class="office-hello">Buenas.</span>
+                  <span class="office-time">10:59 AM</span>
+                  <span class="office-phone">+57 4 604 5535</span>
+                  <span class="office-email">mde@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="OAK." href="">
+                  <span class="office-nation">Oakland.</span>
+                  <span class="office-hello">Sup.</span>
+                  <span class="office-time">8:59 AM</span>
+                  <span class="office-phone">+1 510 735 0700</span>
+                  <span class="office-email">oak@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="SGP." href="">
+                  <span class="office-nation">Singapore.</span>
+                  <span class="office-hello">你好</span>
+                  <span class="office-time">11:59 PM</span>
+                  <span class="office-phone">+65 6303 0592</span>
+                  <span class="office-email">sgp@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="TO." href="">
+                  <span class="office-nation">Toronto.</span>
+                  <span class="office-hello">Eh?</span>
+                  <span class="office-time">11:59 AM</span>
+                  <span class="office-phone">+1 416 800 0466</span>
+                  <span class="office-email">to@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
+               <a class="office-card" title="TYO." href="">
+                  <span class="office-nation">Tokyo.</span>
+                  <span class="office-hello">こんにちは</span>
+                  <span class="office-time">12:59 AM</span>
+                  <span class="office-phone">+81 3 4577 7930</span>
+                  <span class="office-email">tyo@hugeinc.com</span>
+                  <svg class="time-sign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43"><circle cx="21.5" cy="21.5" r="20" class="time-sign__day"></circle></svg>
+               </a>
             </div>
          </section>
       </div>

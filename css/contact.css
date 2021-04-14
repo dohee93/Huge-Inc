@@ -150,13 +150,16 @@
    outline: none;
    height: 40px;
    font-size: 1.2rem;
+   font-family: 'Copernicus';
+   line-height: 2rem;
+   margin-top: 5px;
 }
 .input-label {
    padding-left: 10px;
    border-left: 1px solid #000000;
    top: 0;
    left: 10px;
-   height: 24px;
+   height: 26px;
    transform: translateY(0);
    position: absolute;
 }
@@ -202,4 +205,99 @@
    font-size: 1.25rem;
    letter-spacing: 0rem;
    line-height: 2;
+}
+.talk-eyebrow {
+   font-size: 16px; 
+   font-family: 'Copernicus', serif; 
+   color:#3a97f5; 
+   line-height: 30px; 
+   display: none;
+}
+textarea:focus {
+   outline: none;
+   border-color:#3a97f5; 
+}
+.input:focus {
+   border-color: #3a97f5;
+}
+textarea {
+   font-family: 'Copernicus', serif;
+}
+
+.input-field-message {
+   margin-top: 9px;
+   display: none;
+   opacity: 1;
+   font-size: 14px;
+   color: #EA178C;
+   font-family: "Copernicus",serif;
+   letter-spacing: -.01719rem;
+   line-height: 1.88889;
+}
+
+/* Office */
+.offices-container {
+   padding: 100px 0;
+   width: 89.87342%;
+   margin: 0 auto;
+   display: flex;
+   flex-wrap: wrap;
+}
+.office-card {
+   padding: 115px 70px 30px;
+   width: 33.3333%;
+   background-color: #fff;
+   border-bottom: 1px solid #000;
+   color: #000;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   transition: opacity 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.office-card:hover {
+   opacity: 0.5;
+}
+.office-card:nth-child(3n+1),
+.office-card:nth-child(3n+2) {
+   border-right: 1px solid #000;
+}
+.office-nation {
+   margin-bottom: 50px;
+   font-family: 'Huge', sans-serif;
+   font-size: 2.75rem;
+   letter-spacing: 0rem;
+   line-height: 1.09091;
+}
+.office-hello {
+   margin-bottom: 20px;
+   font-family: 'Huge', sans-serif;
+   font-size: 1.5rem;
+   letter-spacing: 0rem;
+   line-height: 1.25;
+}
+.office-time,
+.office-phone,
+.office-email {
+   font-family: 'Copernicus', sans-serif;
+   font-size: 1.125rem;
+   letter-spacing: -.01719rem;
+   line-height: 1.88889;
+}
+.office-email {
+   min-height: 100px;
+}
+.time-sign {
+   width: 35px;
+   height: 35px;
+   position: absolute;
+   bottom: 30px;
+   right: 30px;
+}
+
+.time-sign__day {
+   fill: #000;
+   fill-opacity: 0;
+   stroke: #000;
+   stroke-linejoin: round;
+   stroke-width: 3px;
 }
