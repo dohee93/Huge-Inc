@@ -46,3 +46,6 @@ p {
    color: gray;
    font-family: 'Copernicus', serif;
 }
+button {
+   outline: none;
+}
