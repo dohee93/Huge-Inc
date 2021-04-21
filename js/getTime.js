@@ -8,7 +8,6 @@ let presentTime = new Date(),
    officeTime = document.getElementsByClassName('office-time'),
    officeDay = document.getElementsByClassName('time-sign__day'),
    officeNight = document.getElementsByClassName('time-sign__night');
-console.log(utcHour, utcMinute);
 let cityAmPm = [],
    cityHourOffset = [-4, -5, -4, -5, -4, -4, 1, -7, -5, -7, +8, -4, +9],
    cityCount = cityHourOffset.length;

@@ -34,7 +34,34 @@ var svgH = document.querySelector('.h-logo__svg');
 var svgHuge = document.querySelector('.huge-logo__svg');
 var mainContent = document.getElementsByTagName('main')[0];
 var gnb = document.getElementsByClassName('gnb-wrapper')[0];
+var foot = document.getElementsByTagName('footer')[0];
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+window.onscroll = function(e) {
+   didScroll = true;
+};
+//0.25초마다 스크롤 여부 체크, hasScrolled() 함수 호출
+setInterval(function(){
+   if(didScroll){
+      hasScrolled();
+      didScroll = false;
+   }
+}, 250);
 
+function hasScrolled() {
+   var nowScrollTop = window.pageYOffset;
+   var pageH = window.pageYOffset;
+   if(Math.abs(lastScrollTop - nowScrollTop) <= delta) {
+      return;
+   }
+   if(nowScrollTop > lastScrollTop) {
+      LogoBtn.style.top = '-74px';
+   } else {
+      LogoBtn.style.top = '50px';
+   } 
+   lastScrollTop = nowScrollTop;
+}
 
 // Menu Button Click 시 Drop Menu 생성
 LogoBtn.addEventListener('click', function(){
@@ -43,15 +70,19 @@ LogoBtn.addEventListener('click', function(){
       svgH.style.display = 'none';
       svgHuge.style.display = 'block';
       mainContent.classList.add('content-vertical-fix');
+      foot.classList.add('content-vertical-fix');
       frameBox.style.borderBottom = '0px solid #F4F4F4';
       gnb.style.height = '440px';
       gnb.style.display = 'block';
       open = true;
    } else {
-      hLogo.style.backgroundColor = '#fff';
+      hLogo.style.backgroundColor = '#000';
       svgH.style.display = 'block';
+      svgH.style.fill = '#fff';
+
       svgHuge.style.display = 'none';
       mainContent.classList.remove('content-vertical-fix');
+      foot.classList.remove('content-vertical-fix');
       gnb.style.height = '0';
       gnb.style.display = 'none';
       open = false;
@@ -64,7 +95,6 @@ LogoBtn.addEventListener('mouseover', function(){
       frameBox.style.borderBottom = '85px solid #F4F4F4';
       frameBox.style.borderRight = '50px solid #F4F4F4';
       frameBox.style.borderLeft = '50px solid #F4F4F4';
-      LogoBtn.style.backgroundColor = '#000';
    }
 });
 LogoBtn.addEventListener('mouseout', function(){
@@ -73,6 +103,5 @@ LogoBtn.addEventListener('mouseout', function(){
       frameBox.style.borderBottom = '0px solid #F4F4F4';
       frameBox.style.borderRight = '0px solid #F4F4F4';
       frameBox.style.borderLeft = '0px solid #F4F4F4';
-      LogoBtn.style.backgroundColor = '#fff';
    }
 });

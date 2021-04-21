@@ -6,6 +6,8 @@
    height: 74px;
    top: 50px;
    z-index: 102;
+   /* top: -74px; */
+   transition: all 0.4s;
 }
 .h-logo {
    background-color: #fff;
@@ -22,9 +24,9 @@
    position: absolute;
    transform: translate(-50%, -50%);
 }
-/* .h-logo:hover {
+.h-logo:hover {
    background-color: #000;
-} */
+}
 .h-logo:hover .h-logo__svg {
    display: block;
    fill: #fff;
