@@ -33,7 +33,9 @@ var open = false;
 var svgH = document.querySelector('.h-logo__svg');
 var svgHuge = document.querySelector('.huge-logo__svg');
 var mainContent = document.getElementsByTagName('main')[0];
-var gnb = document.getElementsByClassName('gnb-wrapper')[0];
+var gnbWrap = document.getElementsByClassName('gnb-wrapper')[0];
+var gnb = document.getElementsByClassName('gnb')[0];
+var gnbSocial = document.getElementsByClassName('gnb-social')[0];
 var foot = document.getElementsByTagName('footer')[0];
 var didScroll;
 var lastScrollTop = 0;
@@ -72,19 +74,22 @@ LogoBtn.addEventListener('click', function(){
       mainContent.classList.add('content-vertical-fix');
       foot.classList.add('content-vertical-fix');
       frameBox.style.borderBottom = '0px solid #F4F4F4';
-      gnb.style.height = '440px';
-      gnb.style.display = 'block';
+      gnbWrap.style.height = '440px';
+      gnb.style.opacity = '1';
+      LogoBtn.style.top = '50px';
+      gnbSocial.style.opacity = '1';
       open = true;
    } else {
       hLogo.style.backgroundColor = '#000';
       svgH.style.display = 'block';
       svgH.style.fill = '#fff';
-
       svgHuge.style.display = 'none';
       mainContent.classList.remove('content-vertical-fix');
       foot.classList.remove('content-vertical-fix');
-      gnb.style.height = '0';
-      gnb.style.display = 'none';
+      gnbWrap.style.height = '0px';
+      gnb.style.opacity = '0';
+      LogoBtn.style.top = '50px';
+      gnbSocial.style.opacity = '0';
       open = false;
    }
 });
